@@ -28,6 +28,13 @@ public class TrainerEntity {
     // constructor
     public TrainerEntity() {}
 
+    public TrainerEntity(String category, double pay, String name, String email, String address) {
+        this.category = category;
+        this.pay = pay;
+        this.name = name;
+        this.email = email;
+        this.address = address;
+    }
 
     // getter und setter
     public Long getId() {

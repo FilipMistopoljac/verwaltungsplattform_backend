@@ -9,10 +9,13 @@ public class TrainerService {
     @Autowired
     TrainerRepository trainerRepository;
 
+    /*
     public String returnName(int trainerId){
 
         return
     }
+
+     */
 
 
 }
