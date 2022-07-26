@@ -2,27 +2,21 @@ package com.filip.verwaltung.trainer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class TrainerEntity {
     @Id
-    @Column(name = "id", nullable = false)
+    @GeneratedValue
     private Long id;
-
-    @Column
     private String category;
-
-    @Column
     private double pay;
 
-    @Column
     private String name;
 
-    @Column
     private String email;
 
-    @Column
     private String address;
 
     // constructor
@@ -83,5 +77,17 @@ public class TrainerEntity {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "TrainerEntity{" +
+                "id=" + id +
+                ", category='" + category + '\'' +
+                ", pay=" + pay +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

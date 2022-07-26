@@ -1,24 +1,26 @@
 package com.filip.verwaltung.trainer;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class TrainerController {
 
-    @ResponseBody
-    @RequestMapping(path = "/test")
-    public String hello(){
-        return "test";
+    private final TrainerRepository repository;
+
+    public TrainerController(TrainerRepository repository) {
+        this.repository = repository;
     }
 
+    @GetMapping("/trainers")
+    List<TrainerEntity> all(){
+        return repository.findAll();
+    }
 
-    @Autowired
-    TrainerService trainerService;
+    @PostMapping("/trainers")
+    TrainerEntity newTrainerEntity(@RequestBody TrainerEntity newTrainerEntity){
+        return repository.save(newTrainerEntity);
 
-
-
+    }
 }
