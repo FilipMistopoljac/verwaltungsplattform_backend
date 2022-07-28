@@ -1,10 +1,10 @@
-package com.filip.verwaltung;
+package com.filip.project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class VerwaltungApplicationTests {
+class ProjectApplicationTests {
 
 	@Test
 	void contextLoads() {
