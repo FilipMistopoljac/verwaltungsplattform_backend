@@ -12,16 +12,12 @@ public class StudentService {
                 new Student(
                         1,
                         "1",
-                        "SD",
-                        "sdsd",
-                        220
+                        "SD"
                 ),
                 new Student(
-                        1,
-                        "1",
-                        "SD",
-                        "sdsd",
-                        220
+                        2,
+                        "1asdfasf",
+                        "SfsaD"
                 )
         );
     }

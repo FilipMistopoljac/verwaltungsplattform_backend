@@ -16,26 +16,20 @@ public class Student {
             generator = "student_sequence"
     )
     private long id;
-    private String name;
-    private String email;
-    private String dob;
-    private int age;
+    private String firstName;
+    private String lastName;
 
     public Student() {}
 
-    public Student(long id, String name, String email, String dob, int age) {
+    public Student(long id, String firstName, String lastName) {
         this.id = id;
-        this.name = name;
-        this.email = email;
-        this.dob = dob;
-        this.age = age;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
-    public Student(String name, String email, String dob, int age) {
-        this.name = name;
-        this.email = email;
-        this.dob = dob;
-        this.age = age;
+    public Student(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public long getId() {
@@ -46,46 +40,28 @@ public class Student {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getDob() {
-        return dob;
-    }
-
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", dob='" + dob + '\'' +
-                ", age=" + age +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 '}';
     }
 }
