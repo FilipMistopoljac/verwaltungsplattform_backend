@@ -3,6 +3,7 @@ package com.filip.project.student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLOutput;
 import java.util.List;
 
 @Service
@@ -20,4 +21,7 @@ public class StudentService {
     }
 
 
+    public void addStudent(Student student) {
+        System.out.println(student);
+    }
 }
