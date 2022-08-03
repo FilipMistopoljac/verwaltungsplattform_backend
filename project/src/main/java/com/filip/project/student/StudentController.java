@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping(path = "api/v1/student")
 public class StudentController {
 
     private final StudentService studentService;
@@ -16,15 +16,14 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @CrossOrigin
-    @GetMapping
+    @GetMapping(path = "api/student/get")
     public List<Student> getStudents() {
         return studentService.getStudents();
     }
 
-    @CrossOrigin
-    @PostMapping
-    public void registerStudent(@RequestBody Student student) {
+    @PostMapping(path = "api/student/add")
+    public String registerStudent(@RequestBody Student student) {
         studentService.addStudent(student);
+        return "student has been added";
     }
 }

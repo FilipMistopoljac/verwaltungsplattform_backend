@@ -22,6 +22,6 @@ public class StudentService {
 
 
     public void addStudent(Student student) {
-        System.out.println(student);
+        studentRepository.save(student);
     }
 }
