@@ -16,14 +16,28 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @GetMapping(path = "api/student/get")
-    public List<Student> getStudents() {
-        return studentService.getStudents();
-    }
-
     @PostMapping(path = "api/student/add")
     public String registerStudent(@RequestBody Student student) {
         studentService.addStudent(student);
         return "student has been added";
     }
+
+    @GetMapping(path = "api/student/get")
+    public List<Student> getStudents() {
+        return studentService.getStudents();
+    }
+
+    @PutMapping("api/student/put/{studentId}")
+    public void putStudent(@RequestBody Student student) {
+        studentService.put(student);
+    }
+
+    @DeleteMapping("api/student/delete/{studentId}")
+    public void deleteStudent(@PathVariable long studentId) {
+        studentService.delete(studentId);
+    }
+
+
+
+
 }
