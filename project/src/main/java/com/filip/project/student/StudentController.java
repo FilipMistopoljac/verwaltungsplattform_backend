@@ -28,7 +28,7 @@ public class StudentController {
     }
 
     @PutMapping("api/student/put/{studentId}")
-    public void putStudent(@RequestBody Student student) {
+    public void putStudent(@RequestBody Student student, @PathVariable String studentId) {
         studentService.put(student);
     }
 
