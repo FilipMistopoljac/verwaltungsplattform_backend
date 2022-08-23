@@ -7,7 +7,6 @@ import java.util.List;
 
 @Service
 public class TrainerService {
-
     private final TrainerRepository trainerRepository;
 
     @Autowired

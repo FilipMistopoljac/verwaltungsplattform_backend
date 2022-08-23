@@ -1,5 +1,6 @@
 package com.filip.project.trainer;
 
+import com.filip.project.student.Student;
 import com.filip.project.trainer.Trainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

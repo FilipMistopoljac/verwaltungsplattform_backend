@@ -1,9 +1,15 @@
 package com.filip.project.room;
 
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
 @Table
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
 public class Room {
 
     @Id
@@ -20,21 +26,19 @@ public class Room {
     private long id;
     private String number;
     private String description;
-    private String personality;
+    private String namesake;
 
-    public Room() {}
-
-    public Room(long id, String number, String description, String personality) {
+    public Room(long id, String number, String description, String namesake) {
         this.id = id;
         this.number = number;
         this.description = description;
-        this.personality = personality;
+        this.namesake = Room.this.namesake;
     }
 
-    public Room(String number, String description, String personality) {
+    public Room(String number, String description, String namesake) {
         this.number = number;
         this.description = description;
-        this.personality = personality;
+        this.namesake = Room.this.namesake;
     }
 
     public long getId() {
@@ -62,20 +66,11 @@ public class Room {
     }
 
     public String getPersonality() {
-        return personality;
+        return namesake;
     }
 
-    public void setPersonality(String personality) {
-        this.personality = personality;
+    public void setPersonality(String namesake) {
+        this.namesake = Room.this.namesake;
     }
 
-    @Override
-    public String toString() {
-        return "Room{" +
-                "id=" + id +
-                ", number='" + number + '\'' +
-                ", description='" + description + '\'' +
-                ", personality='" + personality + '\'' +
-                '}';
-    }
 }

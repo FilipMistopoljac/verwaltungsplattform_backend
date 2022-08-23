@@ -8,7 +8,6 @@ import java.util.List;
 @CrossOrigin
 @RestController
 public class StudentController {
-
     private final StudentService studentService;
 
     @Autowired
