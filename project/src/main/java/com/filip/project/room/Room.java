@@ -1,5 +1,6 @@
 package com.filip.project.room;
 
+import com.filip.project.group.Group;
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,49 +29,13 @@ public class Room {
     private String description;
     private String namesake;
 
-    public Room(long id, String number, String description, String namesake) {
-        this.id = id;
-        this.number = number;
-        this.description = description;
-        this.namesake = Room.this.namesake;
-    }
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "groupId", referencedColumnName = "id")
+    private Group group;
 
     public Room(String number, String description, String namesake) {
         this.number = number;
         this.description = description;
         this.namesake = Room.this.namesake;
     }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNumber() {
-        return number;
-    }
-
-    public void setNumber(String number) {
-        this.number = number;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getPersonality() {
-        return namesake;
-    }
-
-    public void setPersonality(String namesake) {
-        this.namesake = Room.this.namesake;
-    }
-
 }

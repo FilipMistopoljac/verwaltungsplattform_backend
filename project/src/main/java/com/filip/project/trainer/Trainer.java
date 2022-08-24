@@ -1,5 +1,6 @@
 package com.filip.project.trainer;
 
+import com.filip.project.group.Group;
 import lombok.*;
 import javax.persistence.*;
 
@@ -30,6 +31,10 @@ public class Trainer {
     private String employmentType;
     private double pay;
     private String category;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "groupId", referencedColumnName = "id")
+    private Group group;
 
     public Trainer(String firstName, String lastName, String email, String address, String employmentType, double pay, String category) {
         this.firstName = firstName;

@@ -1,6 +1,8 @@
 package com.filip.project.group;
 
+import com.filip.project.room.Room;
 import com.filip.project.student.Student;
+import com.filip.project.trainer.Trainer;
 import lombok.*;
 
 import javax.persistence.*;
@@ -32,6 +34,12 @@ public class Group {
     @OneToMany(targetEntity = Student.class,cascade = CascadeType.ALL)
     @JoinColumn(name = "groupId",referencedColumnName = "id")
     private Set<Student> students;
+
+    @OneToOne(mappedBy = "group")
+    private Trainer trainer;
+
+    @OneToOne(mappedBy = "group")
+    private Room room;
 
     public Group(String name, String number, String category, String startDate) {
         this.name = name;
