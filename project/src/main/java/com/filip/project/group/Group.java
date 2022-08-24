@@ -1,7 +1,10 @@
 package com.filip.project.group;
 
+import com.filip.project.student.Student;
 import lombok.*;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table
@@ -25,6 +28,10 @@ public class Group {
     private String number;
     private String category;
     private String startDate;
+
+    @OneToMany(targetEntity = Student.class,cascade = CascadeType.ALL)
+    @JoinColumn(name = "groupId",referencedColumnName = "id")
+    private Set<Student> students;
 
     public Group(String name, String number, String category, String startDate) {
         this.name = name;
