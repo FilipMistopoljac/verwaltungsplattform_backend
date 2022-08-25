@@ -1,5 +1,6 @@
 package com.filip.project.trainer;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.filip.project.group.Group;
 import lombok.*;
 import javax.persistence.*;
@@ -12,28 +13,29 @@ import javax.persistence.*;
 @ToString
 public class Trainer {
     @Id
-    @SequenceGenerator(
-            name = "trainer_sequence",
-            sequenceName = "trainer_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "trainer_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(updatable = false)
     private long id;
 
+    @Column
     private String firstName;
 
+    @Column
     private String lastName;
+
+    @Column
     private String email;
+    @Column
     private String address;
+    @Column
     private String employmentType;
+    @Column
     private double pay;
+    @Column
     private String category;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "groupId", referencedColumnName = "id")
+    @OneToOne(mappedBy = "trainer")
+    @JsonBackReference
     private Group group;
 
     public Trainer(String firstName, String lastName, String email, String address, String employmentType, double pay, String category) {

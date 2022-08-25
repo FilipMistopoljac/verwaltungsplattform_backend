@@ -5,15 +5,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping
 public class GroupController {
     private final GroupService groupService;
 
     @Autowired
-    public GroupController(GroupService groupService, GroupService groupService1) {
+    public GroupController(GroupService groupService) {
         this.groupService = groupService;
     }
+
     @PostMapping(path = "api/group/add")
     public String registerGroup(@RequestBody Group group) {
         groupService.addGroup(group);

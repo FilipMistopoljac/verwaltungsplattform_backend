@@ -1,7 +1,5 @@
 package com.filip.project.group;
 
-import com.filip.project.group.Group;
-import com.filip.project.group.GroupRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,15 +7,12 @@ import java.util.List;
 
 @Service
 public class GroupService {
-    private final GroupRepository groupRepository;
-
     @Autowired
-    public GroupService(GroupRepository groupRepository) {
-        this.groupRepository = groupRepository;
-    }
+    private GroupRepository groupRepository;
+
 
     public List<Group> getGroups() {
-        return groupRepository.findAll();
+        return (List<Group>) groupRepository.findAll();
     }
 
 
