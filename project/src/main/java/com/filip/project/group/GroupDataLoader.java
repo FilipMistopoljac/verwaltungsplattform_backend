@@ -15,7 +15,7 @@ public class GroupDataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        groupRepository.save(new Group("sadsad","sdasd","sad","asd"));
+       groupRepository.save(new Group("sadsad","sdasd","sad","asd"));
 
     }
 }
