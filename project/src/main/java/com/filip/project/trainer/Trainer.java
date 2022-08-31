@@ -16,13 +16,10 @@ public class Trainer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(updatable = false)
     private long id;
-
     @Column
     private String firstName;
-
     @Column
     private String lastName;
-
     @Column
     private String email;
     @Column

@@ -14,7 +14,7 @@ public class RoomService {
     @Autowired
     public RoomService(RoomRepository roomRepository) {this.roomRepository = roomRepository;}
 
-    public List<Room> getRooms() {return roomRepository.findAll();}
+    public List<Room> getRooms() {return (List<Room>) roomRepository.findAll();}
 
     public void addRoom(Room room) {roomRepository.save(room);}
 }

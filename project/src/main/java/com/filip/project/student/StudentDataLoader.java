@@ -26,5 +26,13 @@ public class StudentDataLoader implements ApplicationRunner {
         studentRepository.save(new Student("Octavia E.", "Butler"));
         studentRepository.save(new Student("Arthur C.", "Clarke"));
         studentRepository.save(new Student("Robert A.", "Heinlein"));
+        studentRepository.save(new Student("Susanna", "Clarke"));
+        studentRepository.save(new Student("Nick", "Harkaway"));
+        studentRepository.save(new Student("Jeff", "VanderMeer"));
+        studentRepository.save(new Student("Ann", "Leckie"));
+        studentRepository.save(new Student("Nicky", "Drayden"));
+        studentRepository.save(new Student("Robert Jackson", "Bennett"));
+        studentRepository.save(new Student("Andreas", "Eschbach"));
+        studentRepository.save(new Student("Raphaela", "Edelbauer"));
     }
 }

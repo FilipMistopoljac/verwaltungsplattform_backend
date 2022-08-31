@@ -1,6 +1,5 @@
 package com.filip.project.group;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.filip.project.room.Room;
 import com.filip.project.student.Student;
@@ -21,16 +20,12 @@ public class Group {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(updatable = false)
     private long id;
-
     @Column
     private String name;
-
     @Column
     private String number;
-
     @Column
     private String category;
-
     @Column
     private String startDate;
 
