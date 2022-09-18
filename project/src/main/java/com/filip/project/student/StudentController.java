@@ -28,10 +28,10 @@ public class StudentController {
     }
 
     @GetMapping(path = "api/student/get/{studentId}")
-    public Optional<Student> findById(@PathVariable Long id) {
-
-        return studentService.findById(id);
+    public Optional<Student> getStudent(@PathVariable long studentId) {
+        return studentService.getStudent(studentId);
     }
+
 
 
     @PutMapping("api/student/put/{studentId}")

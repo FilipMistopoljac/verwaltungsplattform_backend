@@ -19,8 +19,8 @@ public class StudentService {
         return (List<Student>) studentRepository.findAll();
     }
 
-    Optional<Student> findById(Long id) {
-        return null;
+    public Optional<Student> getStudent(long studentId) {
+        return studentRepository.findById(studentId);
     }
 
 

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -23,6 +24,11 @@ public class TrainerController {
     @GetMapping(path = "api/trainer/get")
     public List<Trainer> getTrainers() {
         return trainerService.getTrainers();
+    }
+
+    @GetMapping(path = "api/trainer/get/{trainerId}")
+    public Optional<Trainer> getTrainer(@PathVariable long trainerId) {
+        return trainerService.getTrainer(trainerId);
     }
 
     @PutMapping("api/trainer/put/{trainerId}")
