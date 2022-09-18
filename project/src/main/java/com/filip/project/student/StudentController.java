@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -25,6 +26,13 @@ public class StudentController {
     public List<Student> getStudents() {
         return studentService.getStudents();
     }
+
+    @GetMapping(path = "api/student/get/{studentId}")
+    public Optional<Student> findById(@PathVariable Long id) {
+
+        return studentService.findById(id);
+    }
+
 
     @PutMapping("api/student/put/{studentId}")
     public void putStudent(@RequestBody Student student, @PathVariable String studentId) {
