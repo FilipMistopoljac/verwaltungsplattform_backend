@@ -32,8 +32,6 @@ public class StudentController {
         return studentService.getStudent(studentId);
     }
 
-
-
     @PutMapping("api/student/put/{studentId}")
     public void putStudent(@RequestBody Student student, @PathVariable String studentId) {
         studentService.put(student);
