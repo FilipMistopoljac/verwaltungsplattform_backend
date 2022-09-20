@@ -1,9 +1,11 @@
 package com.filip.project.group;
 
+import com.filip.project.student.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -24,6 +26,11 @@ public class GroupController {
     @GetMapping(path = "api/group/get")
     public List<Group> getGroups() {
         return groupService.getGroups();
+    }
+
+    @GetMapping(path = "api/student/get/{groupId}")
+    public Optional<Group> getGroup(@PathVariable long groupId) {
+        return groupService.getGroup(groupId);
     }
 
     @PutMapping("api/group/put/{groupId}")
