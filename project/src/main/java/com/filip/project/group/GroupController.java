@@ -28,7 +28,7 @@ public class GroupController {
         return groupService.getGroups();
     }
 
-    @GetMapping(path = "api/student/get/{groupId}")
+    @GetMapping(path = "api/group/get/{groupId}")
     public Optional<Group> getGroup(@PathVariable long groupId) {
         return groupService.getGroup(groupId);
     }

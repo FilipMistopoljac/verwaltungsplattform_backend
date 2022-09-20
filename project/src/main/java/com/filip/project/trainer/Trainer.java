@@ -27,7 +27,7 @@ public class Trainer {
     @Column
     private String employmentType;
     @Column
-    private double pay;
+    private double wage;
     @Column
     private String category;
 
@@ -35,13 +35,13 @@ public class Trainer {
     @JsonBackReference
     private Group group;
 
-    public Trainer(String firstName, String lastName, String email, String address, String employmentType, double pay, String category) {
+    public Trainer(String firstName, String lastName, String email, String address, String employmentType, double wage, String category) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.address = address;
         this.employmentType = employmentType;
-        this.pay = pay;
+        this.wage = wage;
         this.category = category;
     }
 }

@@ -15,8 +15,8 @@ public class TrainerDataLoader implements ApplicationRunner {
 
     public void run(ApplicationArguments arg) {
         trainerRepository.save(new Trainer("Cordula" , "Späth", "späth@com.com", "Straße", "fulltime", 2000, "FIA"));
-        trainerRepository.save(new Trainer("Cordula" , "Späth", "späth@com.com", "Straße", "fulltime", 2000, "FIA"));
-        trainerRepository.save(new Trainer("Cordula" , "Späth", "späth@com.com", "Straße", "fulltime", 2000, "FIA"));
+        trainerRepository.save(new Trainer("Mister" , "Hackerman", "späth@com.com", "Straße", "fulltime", 2000, "FIA"));
+        trainerRepository.save(new Trainer("Arnold" , "Schönberg", "späth@com.com", "Straße", "fulltime", 2000, "FIA"));
     }
 }
 
