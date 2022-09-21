@@ -42,4 +42,13 @@ public class GroupController {
     public void deleteGroup(@PathVariable long groupId) {
         groupService.delete(groupId);
     }
+
+    @PutMapping("api/add-student-to-group/{groupId}/{studentId}")
+    public void addStudentToGroup(@PathVariable long groupId, long studentId) {
+        groupService.addStudentToGroup(groupId, studentId);
+    }
+    @PutMapping("api/delete-student-from-group/{groupId}/{studentId}")
+    public void deleteStudentFromGroup(@PathVariable long groupId, long studentId) {
+        groupService.deleteStudentFromGroup(groupId, studentId);
+    }
 }
