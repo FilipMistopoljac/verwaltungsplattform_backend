@@ -1,6 +1,8 @@
 package com.filip.project.group;
 
 import com.filip.project.group.Group;
+import com.filip.project.room.Room;
+import com.filip.project.room.RoomRepository;
 import com.filip.project.student.Student;
 import com.filip.project.student.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ public class GroupService {
     private GroupRepository groupRepository;
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private RoomRepository roomRepository;
 
 
     public List<Group> getGroups() {
@@ -53,5 +58,19 @@ public class GroupService {
 
         groupRepository.save(group.get());
         studentRepository.save(student.get());
+    }
+
+    public void addRoomToGroup(long groupId, long roomId) {
+        Optional<Group> group = groupRepository.findById(groupId);
+        Optional<Room> room = roomRepository.findById(roomId);
+        group.get().setRoom(room.get());
+
+        groupRepository.save(group.get());
+        roomRepository.save(room.get());
+    }
+
+    public void deleteRoomFromGroup(long groupId) {
+        Optional<Group> group = groupRepository.findById(groupId);
+        group.get().setRoom(null);
     }
 }

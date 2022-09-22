@@ -16,5 +16,4 @@ public class StudentDto {
     private long roomId;
     private String roomNumber;
 
-
 }

@@ -29,6 +29,14 @@ public class StudentService {
         return studentRepository.findById(studentId);
     }
 
+    public List<StudentDto> convertStudents() {
+        LinkedList<StudentDto> convertedStudents = new LinkedList<>();
+        for (Student studentInList : studentRepository.findAll()) {
+            convertedStudents.add(convertStudentToDto(studentInList));
+        }
+        return convertedStudents;
+    }
+
     public StudentDto convertStudentToDto(Student student) {
         StudentDto studentDto = new StudentDto();
         studentDto.setStudentId(student.getId());
@@ -39,14 +47,21 @@ public class StudentService {
         groupRepository.findAll().forEach(groupsList::add);
 
         for (Group group : groupsList) {
-            for (Student studentInGroup : group.getStudents()) {
-                if (student.getId() == studentInGroup.getId()) {
+            if (group.getRoom() != null){
+                studentDto.setRoomId(group.getRoom().getId());
+                studentDto.setRoomNumber(group.getRoom().getNumber());
+            }else {
+                studentDto.setRoomId(0);
+                studentDto.setRoomNumber("");
+            }
+            for (Student i : group.getStudents()) {
+                if (student.getId() == i.getId()) {
                     studentDto.setGroupId(group.getId());
                     studentDto.setGroupName(group.getName());
                     return studentDto;
                 } else {
                     studentDto.setGroupId(0);
-                    studentDto.setGroupName(null);
+                    studentDto.setGroupName("");
                 }
             }
         }

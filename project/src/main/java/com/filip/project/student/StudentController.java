@@ -42,6 +42,11 @@ public class StudentController {
         studentService.delete(studentId);
     }
 
+    @GetMapping("api/student/dto/get")
+    public List<StudentDto> convertStudents() {
+        return studentService.convertStudents();
+    }
+
 
 
 

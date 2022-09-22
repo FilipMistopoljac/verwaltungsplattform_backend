@@ -44,11 +44,20 @@ public class GroupController {
     }
 
     @PutMapping("api/add-student-to-group/{groupId}/{studentId}")
-    public void addStudentToGroup(@PathVariable long groupId, long studentId) {
+    public void addStudentToGroup(@PathVariable long groupId, @PathVariable long studentId) {
         groupService.addStudentToGroup(groupId, studentId);
     }
     @PutMapping("api/delete-student-from-group/{groupId}/{studentId}")
-    public void deleteStudentFromGroup(@PathVariable long groupId, long studentId) {
+    public void deleteStudentFromGroup(@PathVariable long groupId, @PathVariable long studentId) {
         groupService.deleteStudentFromGroup(groupId, studentId);
+    }
+
+    @PutMapping("api/add-room-to-group/{groupId}/{roomId}")
+    public void addRoomToGroup(@PathVariable long groupId, @PathVariable long roomId) {
+        groupService.addRoomToGroup(groupId, roomId);
+    }
+    @PutMapping("api/delete-room-from-group/{groupId}")
+    public void deleteRoomFromGroup(@PathVariable long groupId) {
+        groupService.deleteRoomFromGroup(groupId);
     }
 }
