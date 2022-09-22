@@ -35,10 +35,10 @@ public class StudentService {
         studentDto.setFirstName(student.getFirstName());
         studentDto.setLastName(student.getLastName());
 
-        LinkedList<Group> group = new LinkedList<>();
-        groupRepository.findAll().forEach(group::add);
+        LinkedList<Group> groupsList = new LinkedList<>();
+        groupRepository.findAll().forEach(groupsList::add);
 
-        for (Group group : group) {
+        for (Group group : groupsList) {
             for (Student studentInGroup : group.getStudents()) {
                 if (student.getId() == studentInGroup.getId()) {
                     studentDto.setGroupId(group.getId());
@@ -50,10 +50,7 @@ public class StudentService {
                 }
             }
         }
-
-
-
-
+        return studentDto;
     }
 
     public void addStudent(Student student) {
