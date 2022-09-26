@@ -14,8 +14,8 @@ public class RoomDataLoader implements ApplicationRunner {
     public RoomDataLoader(RoomRepository roomRepository) {this.roomRepository = roomRepository;}
 
     public void run(ApplicationArguments arg) {
-       roomRepository.save(new Room("07", "Programmiererin", "Ada Lovelace"));
-       roomRepository.save(new Room("09", "Hacker", "Mister Hackerman"));
-       roomRepository.save(new Room("12", "Unternehmer", "Bill Gates"));
+       roomRepository.save(new Room("01", "Erfinder des Betriebssystems", "William Windows"));
+       roomRepository.save(new Room("02", "Erfinder des PKW", "Elon Tesla"));
+       roomRepository.save(new Room("03", "Steampunk-Heldin", "Ada Lovelace"));
     }
 }

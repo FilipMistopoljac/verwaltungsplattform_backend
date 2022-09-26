@@ -1,5 +1,6 @@
 package com.filip.project.trainer;
 
+import com.filip.project.student.StudentDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,6 +40,11 @@ public class TrainerController {
     @DeleteMapping("api/trainer/delete/{trainerId}")
     public void deleteTrainer(@PathVariable long trainerId) {
         trainerService.delete(trainerId);
+    }
+
+    @GetMapping("api/trainer/dto/get")
+    public List<TrainerDto> convertTrainers() {
+        return trainerService.convertTrainers();
     }
 
 }

@@ -46,8 +46,4 @@ public class StudentController {
     public List<StudentDto> convertStudents() {
         return studentService.convertStudents();
     }
-
-
-
-
 }

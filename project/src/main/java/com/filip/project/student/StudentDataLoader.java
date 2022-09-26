@@ -1,5 +1,7 @@
 package com.filip.project.student;
 
+import com.filip.project.group.GroupRepository;
+import com.filip.project.group.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -16,23 +18,10 @@ public class StudentDataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments arg) {
-        studentRepository.save(new Student("Isaac", "Asimov"));
-        studentRepository.save(new Student("Ursula K.", "Le Guin"));
-        studentRepository.save(new Student("China", "Mieville"));
-        studentRepository.save(new Student("Dietmar", "Dath"));
+        studentRepository.save(new Student("Doktor", "Sigma"));
+        studentRepository.save(new Student("Mister", "Hackerman"));
+        studentRepository.save(new Student("Anna", "Mnese"));
+        studentRepository.save(new Student("Nick L.", "Beck"));
         studentRepository.save(new Student("Cixin", "Liu"));
-        studentRepository.save(new Student("Stanislaw", "Lem"));
-        studentRepository.save(new Student("Peter", "Watts"));
-        studentRepository.save(new Student("Octavia E.", "Butler"));
-        studentRepository.save(new Student("Arthur C.", "Clarke"));
-        studentRepository.save(new Student("Robert A.", "Heinlein"));
-        studentRepository.save(new Student("Susanna", "Clarke"));
-        studentRepository.save(new Student("Nick", "Harkaway"));
-        studentRepository.save(new Student("Jeff", "VanderMeer"));
-        studentRepository.save(new Student("Ann", "Leckie"));
-        studentRepository.save(new Student("Nicky", "Drayden"));
-        studentRepository.save(new Student("Robert Jackson", "Bennett"));
-        studentRepository.save(new Student("Andreas", "Eschbach"));
-        studentRepository.save(new Student("Raphaela", "Edelbauer"));
     }
 }

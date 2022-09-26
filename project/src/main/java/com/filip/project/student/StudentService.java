@@ -2,7 +2,6 @@ package com.filip.project.student;
 
 import com.filip.project.group.Group;
 import com.filip.project.group.GroupRepository;
-import com.filip.project.room.Room;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,8 +30,8 @@ public class StudentService {
 
     public List<StudentDto> convertStudents() {
         LinkedList<StudentDto> convertedStudents = new LinkedList<>();
-        for (Student studentInList : studentRepository.findAll()) {
-            convertedStudents.add(convertStudentToDto(studentInList));
+        for (Student i : studentRepository.findAll()) {
+            convertedStudents.add(convertStudentToDto(i));
         }
         return convertedStudents;
     }
@@ -58,6 +57,7 @@ public class StudentService {
                 if (student.getId() == i.getId()) {
                     studentDto.setGroupId(group.getId());
                     studentDto.setGroupName(group.getName());
+                    studentDto.setStartDate(group.getStartDate());
                     return studentDto;
                 } else {
                     studentDto.setGroupId(0);
