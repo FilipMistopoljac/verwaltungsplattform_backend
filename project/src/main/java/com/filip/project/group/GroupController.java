@@ -60,4 +60,9 @@ public class GroupController {
     public void deleteRoomFromGroup(@PathVariable long groupId) {
         groupService.deleteRoomFromGroup(groupId);
     }
+
+    @PutMapping("api/add-trainer-to-group/{groupId}/{trainerId}")
+    public void addTrainerToGroup(@PathVariable long groupId, @PathVariable long trainerId) {
+        groupService.addTrainerToGroup(groupId, trainerId);
+    }
 }

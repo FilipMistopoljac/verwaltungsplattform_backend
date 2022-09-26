@@ -5,6 +5,8 @@ import com.filip.project.room.Room;
 import com.filip.project.room.RoomRepository;
 import com.filip.project.student.Student;
 import com.filip.project.student.StudentRepository;
+import com.filip.project.trainer.Trainer;
+import com.filip.project.trainer.TrainerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class GroupService {
     private GroupRepository groupRepository;
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private TrainerRepository trainerRepository;
 
     @Autowired
     private RoomRepository roomRepository;
@@ -67,6 +72,15 @@ public class GroupService {
 
         groupRepository.save(group.get());
         roomRepository.save(room.get());
+    }
+
+    public void addTrainerToGroup(long groupId, long trainerId) {
+        Optional<Group> group = groupRepository.findById(groupId);
+        Optional<Trainer> trainer = trainerRepository.findById(trainerId);
+        group.get().setTrainer(trainer.get());
+
+        groupRepository.save(group.get());
+        trainerRepository.save(trainer.get());
     }
 
     public void deleteRoomFromGroup(long groupId) {
